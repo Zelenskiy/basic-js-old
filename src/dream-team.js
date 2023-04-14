@@ -44,41 +44,63 @@ const { NotImplementedError } = require("../extensions/index.js");
 // }
 
 function createDreamTeam(members) {
-  if (!Array.isArray(members)) return false;
-
-  let members2 = members
-    .map((item) => {
-      if (typeof item === "string") {
-        return item.toString().trim(" ").toUpperCase();
-      } else if (Array.isArray(item)) {
-        return item
-          .filter((subitem) => typeof subitem === "string")
-          .map((subitem) => subitem.toString().trim(" ").toUpperCase());
-        // } else if (typeof item === 'object' && item !== null) {
-        //   return Object.values(item).filter(subitem => typeof subitem === 'string').map(subitem => subitem.toString().trim(' ').toUpperCase());
-      } else {
-        return "";
-      }
-    })
-    .flat();
-
   let teamName = "";
-  members2.sort();
-  members2.forEach((element) => {
-    if (typeof element === "string") {
-      element = element.trim().toUpperCase();
-      if (element[0]) {
-        teamName += element[0];
+  if(!Array.isArray(members)) 
+    return false;
+  members.forEach(element => {
+      if (typeof(element) === "string"){
+          element = element.trim(' '); 
+          element = element.toUpperCase();
+          teamName += element[0];
+      } else {
+          
       }
-    }
   });
 
-  const set = new Set(teamName);
-  const sortedArr = Array.from(set).sort();
+  const sortedArr = Array.from(teamName).sort();
   teamName = sortedArr.join("");
   
-  return teamName;
+    return teamName;
+  
 }
+
+// function createDreamTeam(members) {
+//   if (!Array.isArray(members)) return false;
+
+//   let members2 = members
+//     .map((item) => {
+//       if (typeof item === "string") {
+//         return item.toString().trim(" ").toUpperCase();
+//       } else if (Array.isArray(item)) {
+//         return item
+//           .filter((subitem) => typeof subitem === "string")
+//           .map((subitem) => subitem.toString().trim(" ").toUpperCase());
+//         // } else if (typeof item === 'object' && item !== null) {
+//         //   return Object.values(item).filter(subitem => typeof subitem === 'string').map(subitem => subitem.toString().trim(' ').toUpperCase());
+//       } else {
+//         return "";
+//       }
+//     })
+//     .flat();
+
+//   let teamName = "";
+//   members2.sort();
+//   members2.forEach((element) => {
+//     if (typeof element === "string") {
+//       element = element.trim().toUpperCase();
+//       if (element[0]) {
+//         teamName += element[0];
+//       }
+//     }
+//   });
+
+//   const set = new Set(teamName);
+//   const sortedArr = Array.from(set).sort();
+//   teamName = sortedArr.join("");
+  
+//   return teamName;
+// }
+
 
 // function createDreamTeam(members) {
 //   if (!Array.isArray(members)) return false;
@@ -117,4 +139,11 @@ module.exports = {
 //   ])
 // );
 
-// console.log("BDETV");
+console.log(
+
+  createDreamTeam(3)
+);
+
+
+
+console.log("false");
