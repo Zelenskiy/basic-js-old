@@ -25,6 +25,8 @@ function dateSample( sampleActivity ) {
       return false;
     }
     let x = parseFloat(sampleActivity);
+    if (isNaN(x)) 
+      return false;
     if( x > MODERN_ACTIVITY || x <= 0 || x > 9000 || x === null || x === undefined || x == NaN ){
       return false;
     }
@@ -38,4 +40,4 @@ module.exports = {
   dateSample
 };
 
-console.log(dateSample('WOOT!'));
+console.log(dateSample('8.463376256343299'));
