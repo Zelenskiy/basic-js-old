@@ -13,9 +13,9 @@ const { NotImplementedError } = require("../extensions/index.js");
  */
 
 //  function uniqueSortedChars(str) {
-//   const set = new Set(str); // створюємо множину з унікальних символів рядка
-//   const sortedChars = Array.from(set).sort(); // перетворюємо множину в масив, сортуємо його
-//   return sortedChars.join(''); // з'єднуємо символи масиву у новий рядок і повертаємо його
+//   const set = new Set(str);
+//   const sortedChars = Array.from(set).sort(); 
+//   return sortedChars.join(''); 
 // }
 
 // function getCommonCharacterCount(s1, s2) {
@@ -41,7 +41,7 @@ function getCommonCharacterCount(s1, s2) {
   for (let char of s1) {
     if (s2.includes(char)) {
       count++;
-      s2 = s2.replace(char, ""); // remove the matched character from s2
+      s2 = s2.replace(char, ""); 
     }
   }
   return count;
@@ -51,4 +51,3 @@ module.exports = {
   getCommonCharacterCount,
 };
 
-// console.log(getCommonCharacterCount("aabcc", "adcaa"));
