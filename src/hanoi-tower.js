@@ -32,5 +32,4 @@ module.exports = {
   calculateHanoi
 };
 
-console.log(calculateHanoi(8, 4694));
-console.log({turns: 255, seconds: 195});
+
