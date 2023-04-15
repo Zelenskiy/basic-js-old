@@ -42,8 +42,8 @@ module.exports = {
 };
 
 
-console.log(getDNSStats(['epam.com', 'info.epam.com']));
-console.log({ '.com': 2, '.com.epam': 2, '.com.epam.info': 1 });
+// console.log(getDNSStats(['epam.com', 'info.epam.com']));
+// console.log({ '.com': 2, '.com.epam': 2, '.com.epam.info': 1 });
 // console.log(getDNSStats(['epam.com']));
 // console.log({ '.com': 1, '.com.epam': 1 });
 
