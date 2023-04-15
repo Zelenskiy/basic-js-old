@@ -40,4 +40,4 @@ module.exports = {
   dateSample
 };
 
-console.log(dateSample('8.463376256343299'));
+

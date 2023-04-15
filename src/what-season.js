@@ -16,6 +16,10 @@ function getSeason(date) {
   if (!date) {
     return 'Unable to determine the time of year!';
   }
+  if (!(date instanceof Date && !isNaN(date.valueOf()))) {
+    // throw new Error('Invalid date!');
+    return 'Invalid date!'
+  }
 
   if (isNaN(date.getTime())) {
     throw new Error('Invalid date!');
@@ -44,3 +48,5 @@ function getSeason(date) {
 module.exports = {
   getSeason,
 };
+
+console.log(getSeason(() => new Date()));
